@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "my-0cc7"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "my-0cc7"
+  template:
+    metadata:
+      labels:
+        app: "my-0cc7"
+    spec:
+      containers:
+        - name: "my-0cc7"
+          image: "maxdb.azurecr.io/my"
+          ports:
+          - containerPort: 80
